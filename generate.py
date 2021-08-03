@@ -18,8 +18,11 @@ class WiFiNEProcessor:
 
 
     def load_document_vocab(self):
+        '''
+        Load document.vocab into self.document_vocab
+        '''
         print("BEGIN load_document_vocab()")
-        path = '../document.vocab'
+        path = '../WiFiNE/document.vocab'
         with open(path, 'r') as file:
             for i, line in enumerate(file):
                 line = line.split()
@@ -29,8 +32,11 @@ class WiFiNEProcessor:
 
 
     def load_figer_vocab(self):
+        '''
+        Load figer.vocab into self.figer_vocab
+        '''
         print("BEGIN load_figer_vocab()")
-        path = '../figer.vocab'
+        path = '../WiFiNE/figer.vocab'
         with open(path, 'r') as file:
             for i, line in enumerate(file):
                 line = line.split()
@@ -40,8 +46,11 @@ class WiFiNEProcessor:
 
 
     def load_document_path(self):
+        '''
+        Find and load the document file that contains the article with self.art_id 
+        '''
         print('BEGIN load_document_path()')
-        search_path = '../Documents/'
+        search_path = '../WiFiNE/Documents/'
         i = 0
         while True:
             try:
@@ -70,22 +79,36 @@ class WiFiNEProcessor:
         with open(self.annotation_path, 'r') as file:
             not_first = False
             for line in file:
+                # print(line)
                 line = line.split()
                 if (line[0] == 'ID'):
-                    if not_first: # only parse the first article
-                        break
+                    if not_first: break # only parse the first article
+                    self.art_id = int(line[1])
+                    not_first = True
+                    continue
+                sen_idx = int(line[0])
+
+                if self.sen_idx_min is None: self.sen_idx_min = sen_idx
+                self.sen_idx_max = sen_idx
+
+        self.segments = [[]] * (self.sen_idx_max - self.sen_idx_min + 1)
+
+        with open(self.annotation_path, 'r') as file:
+            not_first = False
+            for line in file:
+                # print(line)
+                line = line.split()
+                if (line[0] == 'ID'):
+                    if not_first: break # only parse the first article
                     self.art_id = int(line[1])
                     not_first = True
                     continue
                 sen_idx = int(line[0]); begin = int(line[1]); end = int(line[2])
                 figer_type = self.figer_vocab[int(line[4])]
-
-                if self.sen_idx_min is None: self.sen_idx_min = sen_idx
-                self.sen_idx_max = sen_idx
-
-                self.segments = [[]] * (self.sen_idx_max - self.sen_idx_min + 1)
+                # self.segments[i] is a list of tuples that corresponds to a segment in sentence i
                 self.segments[sen_idx].append([begin, end, figer_type])
 
+        print("self.segments[0] is:", self.segments[0])
         self.load_document_path() # find document with correct article id
 
         print('reading document data...')
@@ -100,14 +123,15 @@ class WiFiNEProcessor:
                         self.sentences[sen_idx].append(self.document_vocab[int(wrd_idx)])
         
         print('writing output file...')
-        print(self.segments)
+        # print(self.segments)
         with open(self.output_path, 'w') as file:
             for sen_idx in range(len(self.segments)):
-                print('sen_idx is:', sen_idx)
+                # print('sen_idx is:', sen_idx)
                 sentence = self.segments[sen_idx]
                 for segment in sentence:
                     begin = segment[0]; end = segment[1] + 1; figer_entity = segment[2]
                     for i in range(begin, end + 1):
+                        print("i is:", i)
                         output = []
                         word = self.sentences[sen_idx][i]
                         output.append(word)
@@ -116,7 +140,5 @@ class WiFiNEProcessor:
 
         print("END generate()")
 
-processor = WiFiNEProcessor('../FineEntity/0', './0') 
+processor = WiFiNEProcessor('../WiFiNE/FineEntity/0', './0') 
 processor.generate()
-
-# TODO (Jul 28): Figure how to search for document given article_idx
