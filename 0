@@ -1,3 +1,5 @@
+-DOCSTART-          O
+
 Pee-wee             /art/film
 's                  /art/film
 Big                 /art/film
@@ -25,6 +27,7 @@ as                  O
 Pee-wee             /person/fictional_character
 Herman              /person/fictional_character
 .                   O
+
 Reubens             /person/director
 also                O
 co-wrote            O
@@ -37,6 +40,7 @@ and                 O
 Michael             /person/actor
 Varhol              /person/actor
 .                   O
+
 Supporting          O
 roles               O
 are                 O
@@ -54,6 +58,7 @@ and                 O
 Judd                /person/actor
 Omen                /person/actor
 .                   O
+
 Pee-wee             /art/film
 's                  O
 Big                 O
@@ -75,6 +80,7 @@ his                 O
 stolen              O
 bicycle             O
 .                   O
+
 After               O
 the                 O
 success             O
@@ -103,6 +109,7 @@ Warner              /organization/company
 Bros.               /organization/company
 Pictures            /organization/company
 .                   O
+
 The                 O
 producers           O
 and                 O
@@ -123,6 +130,7 @@ Vincent             /art/film
 and                 O
 Frankenweenie       /art/film
 .                   O
+
 Filming             O
 took                O
 place               O
@@ -132,6 +140,7 @@ California          /location/province
 and                 O
 Texas               /location/province
 .                   O
+
 When                O
 Pee-wee             /art/film
 's                  O
@@ -159,6 +168,7 @@ generally           O
 mixed               O
 reviews             O
 .                   O
+
 However             O
 ,                   O
 it                  O
@@ -175,6 +185,7 @@ accumulated         O
 positive            O
 feedback            O
 .                   O
+
 The                 O
 film                O
 was                 O
@@ -193,6 +204,7 @@ Big                 /art/film
 Top                 /art/film
 Pee-wee             /art/film
 .                   O
+
 The                 O
 financial           O
 success             O
@@ -225,6 +237,7 @@ film                /art/film
 ,                   O
 Batman              /art/film
 .                   O
+
 Pee-wee             /person/fictional_character
 Herman              /person/fictional_character
 loves               O
@@ -249,6 +262,7 @@ neighbor            O
 Francis             /person/fictional_character
 Buxton              /person/fictional_character
 .                   O
+
 The                 O
 bike                O
 is                  O
@@ -296,6 +310,7 @@ Antonio             /location
 ,                   O
 Texas               /location/province
 .                   O
+
 On                  O
 the                 O
 way                 O
@@ -318,6 +333,7 @@ living              O
 in                  O
 Paris               /location/city
 .                   O
+
 Her                 O
 jealous             O
 boyfriend           O
@@ -353,6 +369,7 @@ a                   O
 moving              O
 train               O
 .                   O
+
 Making              O
 it                  O
 to                  O
@@ -368,6 +385,7 @@ has                 O
 no                  O
 basement            O
 .                   O
+
 Disappointed        O
 ,                   O
 Pee-wee             /art/film
@@ -391,6 +409,7 @@ over                O
 their               O
 motorcycles         O
 .                   O
+
 Fearing             O
 they                O
 are                 O
@@ -419,6 +438,7 @@ of                  O
 the                 O
 bikers              O
 .                   O
+
 The                 O
 bikers              O
 give                O
@@ -442,6 +462,7 @@ in                  O
 the                 O
 hospital            O
 .                   O
+
 There               O
 ,                   O
 he                  O
@@ -477,6 +498,7 @@ prominent           O
 plot                O
 device              O
 .                   O
+
 Pee-wee             /art/film
 enters              O
 Warner              /broadcast_network
@@ -499,6 +521,7 @@ the                 O
 bike                O
 back                O
 .                   O
+
 In                  O
 a                   O
 wild                O
@@ -525,6 +548,7 @@ throughout          O
 the                 O
 lot                 O
 .                   O
+
 Various             O
 actors              O
 and                 O
@@ -558,6 +582,7 @@ into                O
 the                 O
 chase               O
 .                   O
+
 He                  O
 also                O
 interrupts          O
@@ -579,6 +604,7 @@ from                O
 Stay                /art/music
 Hungry              /art/music
 .                   O
+
 Using               O
 the                 O
 gadgets             O
@@ -611,6 +637,7 @@ escape              O
 the                 O
 studio              O
 .                   O
+
 As                  O
 he                  O
 blissfully          O
@@ -625,6 +652,7 @@ burning             O
 pet                 O
 shop                O
 .                   O
+
 After               O
 heroically          O
 saving              O
@@ -660,6 +688,7 @@ police              O
 department          O
 arrive              O
 .                   O
+
 Though              O
 the                 O
 fire                O
@@ -676,6 +705,7 @@ police              O
 arrest              O
 him                 O
 .                   O
+
 Pee-wee             /art/film
 is                  O
 brought             O
@@ -702,6 +732,7 @@ dropping            O
 all                 O
 charges             O
 .                   O
+
 Dottie              /art/music
 is                  O
 summoned            O
@@ -716,6 +747,7 @@ Pee-Wee             /person/director
 beloved             O
 bicycle             O
 .                   O
+
 He                  O
 attends             O
 the                 O
@@ -746,6 +778,7 @@ Fairchild           /person/actor
 fighting            O
 ninjas              O
 .                   O
+
 Pee-wee             /art/film
 has                 O
 a                   O
@@ -761,6 +794,7 @@ voice               O
 dubbed              O
 over                O
 .                   O
+
 After               O
 watching            O
 for                 O
@@ -783,6 +817,7 @@ the                 O
 real                O
 story               O
 .                   O
+
 Reunited            O
 with                O
 his                 O
@@ -798,6 +833,7 @@ happily             O
 ever                O
 after               O
 .                   O
+
 Michael             /person/author
 Varhol              /person/author
 ,                   O
@@ -834,6 +870,7 @@ the                 O
 rainy               O
 back-alley          O
 .                   O
+
 Other               O
 minor               O
 roles               O
@@ -859,6 +896,7 @@ as                  O
 Biker               /person/fictional_character
 Mama                /person/fictional_character
 .                   O
+
 James               /person/actor
 Brolin              /person/actor
 portrays            O
@@ -886,6 +924,7 @@ a                   O
 full-length         O
 film                O
 .                   O
+
 Dee                 /person/actor
 Snider              /person/actor
 and                 O
@@ -901,6 +940,7 @@ cameo               O
 as                  O
 themselves          O
 .                   O
+
 Lonnie              /person/actor
 Parkinson           /person/actor
 -                   O
@@ -931,6 +971,7 @@ Pee-wee             /person/fictional_character
 Herman              /person/fictional_character
 film                O
 .                   O
+
 Reubens             /person/director
 '                   O
 original            O
@@ -951,6 +992,7 @@ Hayley              /person/actor
 Mills               /person/actor
 role                O
 .                   O
+
 Reubens             /person/director
 claims              O
 that                O
@@ -960,6 +1002,7 @@ his                 O
 favorite            O
 film                O
 .                   O
+
 Halfway             /location/city
 through             O
 writing             O
@@ -990,6 +1033,7 @@ of                  O
 his                 O
 own                 O
 .                   O
+
 This                O
 inspired            O
 Reubens             /person/director
@@ -1000,6 +1044,7 @@ a                   O
 new                 O
 script              O
 .                   O
+
 Having              O
 left                O
 The                 /organization/news_agency
@@ -1027,6 +1072,7 @@ film                O
 to                  O
 direct              O
 .                   O
+
 When                O
 Reubens             /person/director
 and                 O
@@ -1055,6 +1101,7 @@ for                 O
 their               O
 film                O
 .                   O
+
 Burton              /person/director
 felt                O
 he                  O
@@ -1072,6 +1119,7 @@ Pee-wee             /art/film
 Herman              /art/film
 Show                /art/film
 .                   O
+
 After               O
 hiring              O
 Burton              /person/director
@@ -1090,6 +1138,7 @@ the                 O
 script              O
 again               O
 .                   O
+
 Filming             O
 locations           O
 included            O
@@ -1124,6 +1173,7 @@ Antonio             /location/city
 ,                   O
 Texas               /location/province
 .                   O
+
 Burton              /person/director
 and                 O
 Reubens             /person/director
@@ -1139,6 +1189,7 @@ the                 O
 shooting            O
 schedule            O
 .                   O
+
 Burton              /person/director
 hired               O
 CalArts             /organization/educational_institution
@@ -1151,6 +1202,7 @@ involving           O
 stop-motion         O
 animation           O
 .                   O
+
 To                  O
 compose             O
 the                 O
@@ -1173,6 +1225,7 @@ for                 O
 Forbidden           /art/film
 Zone                /art/film
 .                   O
+
 Elfman              /person/musician
 already             O
 had                 O
@@ -1186,6 +1239,7 @@ he                  O
 signed              O
 on                  O
 .                   O
+
 At                  O
 the                 O
 time                O
@@ -1216,6 +1270,7 @@ Burton              /person/director
 's                  O
 films               O
 .                   O
+
 The                 O
 film                O
 also                O
@@ -1236,6 +1291,7 @@ by                  O
 The                 /person/artist
 Champs              /person/artist
 .                   O
+
 Pee-wee             /art/film
 's                  O
 Big                 O
@@ -1262,6 +1318,7 @@ its                 O
 opening             O
 weekend             O
 .                   O
+
 The                 O
 film                O
 went                O
@@ -1287,6 +1344,7 @@ a                   O
 financial           O
 success             O
 .                   O
+
 Pee-wee             /art/film
 's                  O
 Big                 O
@@ -1312,6 +1370,7 @@ a                   O
 cult                O
 film                O
 .                   O
+
 Based               O
 on                  O
 36                  O
@@ -1333,6 +1392,7 @@ overall             O
 approval            O
 rating              O
 .                   O
+
 By                  O
 comparison          O
 Metacritic          /internet/website
@@ -1347,6 +1407,7 @@ from                O
 reviews             O
 collected           O
 .                   O
+
 The                 O
 film                O
 was                 O
@@ -1367,6 +1428,7 @@ or                  O
 Musical             O
 -RRB-               O
 .                   O
+
 Christopher         /person/actor
 Null                /person/actor
 gave                O
@@ -1382,6 +1444,7 @@ strangest           O
 film                O
 ''                  O
 .                   O
+
 Variety             /organization/news_agency
 compared            O
 Paul                /person/director
@@ -1412,6 +1475,7 @@ debut               O
 for                 O
 Burton              /person/director
 .                   O
+
 Stephanie           /person
 Zacharek            /person
 of                  O
@@ -1454,6 +1518,7 @@ pure                O
 pleasure            O
 ''                  O
 .                   O
+
 Burton              /person/director
 had                 O
 no                  O
@@ -1481,6 +1546,7 @@ to                  O
 direct              O
 Batman              /art/film
 .                   O
+
 Warner              /organization/company
 Home                /organization/company
 Video               /organization/company
@@ -1495,6 +1561,7 @@ in                  O
 May                 O
 2000                O
 .                   O
+
 The                 O
 release             O
 included            O

@@ -141,7 +141,9 @@ class WiFiNEProcessor:
         print("self.sentences[0] is:", self.sentences[0])
         print("self.sentences[1] is:", self.sentences[1])
         with open(self.output_path, 'w') as file:
+            file.write('-DOCSTART-          O\n')
             for sen_idx, sentence in enumerate(self.sentences):
+                file.write('\n')
                 for word_idx, word in enumerate(sentence):
                     output = [word]
                     segments_at_sen_idx = self.segments[sen_idx]
