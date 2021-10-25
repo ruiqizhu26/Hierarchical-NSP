@@ -2,7 +2,7 @@ import sys
 import time 
 
 
-class WiFiNEProcessor:
+class WiFiNECoNLLizer:
     def __init__(self, annotation_path, output_path):
         self.annotation_path = annotation_path
         self.document_path = None
@@ -21,40 +21,41 @@ class WiFiNEProcessor:
         self.load_figer_vocab()
 
 
+    """
+    Load document.vocab into self.document_vocab
+    """
     def load_document_vocab(self):
-        '''
-        Load document.vocab into self.document_vocab
-        '''
-        # print("BEGIN load_document_vocab()")
-        path = '../WiFiNE_original/document.vocab'
+        start = time.time()
+        path = PREFIX + 'document.vocab'
         with open(path, 'r') as file:
             for i, line in enumerate(file):
                 line = line.split()
                 word = line[0]; index = i
                 self.document_vocab[index] = word
-        # print("FINISH load_document_vocab()")
+        print('time for load_document_vocab():', round(time.time() - start, 2), 'seconds')
 
 
+    """
+    Load figer.vocab into self.figer_vocab
+    """
     def load_figer_vocab(self):
-        '''
-        Load figer.vocab into self.figer_vocab
-        '''
-        # print("BEGIN load_figer_vocab()")
-        path = '../WiFiNE_original/figer.vocab'
+        start = time.time()
+        path = PREFIX + 'figer.vocab'
         with open(path, 'r') as file:
             for i, line in enumerate(file):
                 line = line.split()
                 entity = line[0]; index = i
                 self.figer_vocab[index] = entity
-        # print("FINISH load_figer_vocab()")
+        print('time for load_figer_vocab():', round(time.time() - start, 2), 'seconds')
 
 
+    """
+    Find and load the document file that contains the article with self.art_id 
+    """
+    # TODO Oct 25, 2021: This function seems to be the bottleneck (about 30s for 1000+ annotation indices)
     def load_document_path(self):
-        '''
-        Find and load the document file that contains the article with self.art_id 
-        '''
-        # print('BEGIN load_document_path()')
-        search_path = '../WiFiNE_original/Documents/'
+        start = time.time()
+        search_path = PREFIX + 'Documents/'
         i = 0
         while True:
             try:
@@ -64,22 +65,21 @@ class WiFiNEProcessor:
                         if line[0] == 'ID':
                             if int(line[1]) == self.art_id:
                                 self.document_path = search_path + str(i)
-                                return
+                                print('time for load_document_path():', round(time.time() - start, 2), 'seconds')
+                                return 
             except:
                 pass
             i += 1
-        # print('FINISH load_document_path()')
 
 
-    def generate(self):
-        """
-        Input: Path of Wilipedia article
-        Result: Generate a dataset in text file format similar to CoNLL-2003
-        format: [sentIdx, begin, end, menType, figer_types, gillick_types]
-        """
+    """
+    Input: Path of Wilipedia article
+    Result: Generate a dataset in text file format similar to CoNLL-2003
+    format: [sentIdx, begin, end, menType, figer_types, gillick_types]
+    """
+    def conllize(self):
         start = time.time()
-        # print('BEGIN generate()')
-        # print('reading figer annotations...')
+        # Read figer annotations
         with open(self.annotation_path, 'r') as file:
             not_first = False
             for line in file:
@@ -94,7 +94,7 @@ class WiFiNEProcessor:
                 if self.sen_idx_min is None: self.sen_idx_min = sen_idx
                 self.sen_idx_max = sen_idx
 
-        self.segments = [None] * (self.sen_idx_max - self.sen_idx_min + 1) # Warning: do not do self.segments = [[]] * 66!
+        self.segments = [None] * (self.sen_idx_max - self.sen_idx_min + 1) # don't do self.segments = [[]] * 66
         for i in range(len(self.segments)):
             self.segments[i] = []
 
@@ -118,7 +118,7 @@ class WiFiNEProcessor:
 
         self.load_document_path() # find document with correct article id
 
-        # print('reading document data...')
+        # Read document data
         with open(self.document_path, 'r') as file:
             sen_idx = -1
             right_article = False
@@ -137,7 +137,8 @@ class WiFiNEProcessor:
                         for wrd_idx in line:
                             self.sentences[sen_idx].append(self.document_vocab[int(wrd_idx)])
         
-        # print('writing output file...')
+        # Write output file
+        substart = time.time()
         with open(self.output_path, 'w') as file:
             file.write('-DOCSTART-          O\n')
             for sen_idx, sentence in enumerate(self.sentences):
@@ -157,19 +158,21 @@ class WiFiNEProcessor:
                         output.append('O')
                     sep = ''.join([' '] * (20 - len(word)))
                     file.write(sep.join(output) + '\n')
-        # print("END generate()")
-        print('time taken:', time.time() - start)
+        print('time to write output file in conllize():', round(time.time() - substart, 2), 'seconds')
+        print('time for conllize():', round(time.time() - start, 2), 'seconds', '\n')
 
 
-# Remove 1st argument from the
-# list of command line arguments
-args = sys.argv[1:]
 
-annotation_path = '../WiFiNE_original/FineEntity/'
+
+#### ------------------------------------------------------------
+PREFIX = '../WiFiNE_original/'
+annotation_path = PREFIX + 'FineEntity/'
 output_path = '../WiFiNE_CoNLLized/'
 
+
+args = sys.argv[1:]
 try:
-    # Parsing argument
+    # Parse argument
     for i, arg in enumerate(args):
         if arg == '-a':
             annotation_path += args[i + 1]
@@ -177,9 +180,8 @@ try:
             output_path += args[i + 1]
              
 except getopt.error as err:
-    # output error, and return with an error code
-    print(str(err))
+    print(err)
 
 
-processor = WiFiNEProcessor(annotation_path, output_path) 
-processor.generate()
+conllizer = WiFiNECoNLLizer(annotation_path, output_path) 
+conllizer.conllize()
